@@ -344,7 +344,6 @@ chai-tailwind/
 ├── README.md
 └── LICENSE
 ```
-
 ---
 
 ## Browser Support

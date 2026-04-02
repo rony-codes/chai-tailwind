@@ -66,7 +66,6 @@ const positionMap = {
 
 elements.forEach((el) => {
   el.classList.forEach((cls) => {
-    
     // prefix check
     if (!cls.startsWith("chai-")) return;
 
@@ -95,7 +94,7 @@ elements.forEach((el) => {
     }
 
     if (type in positionMap) {
-      el.style.position = positionMap[type]; 
+      el.style.position = positionMap[type];
       return;
     }
 
@@ -207,6 +206,5 @@ elements.forEach((el) => {
       el.style.opacity = value / 100;
       return;
     }
-
   });
 });
