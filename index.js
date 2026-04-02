@@ -1,4 +1,3 @@
-
 const elements = document.querySelectorAll("[class]");
 
 // -------------------- MAPS --------------------
