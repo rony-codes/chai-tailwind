@@ -2,17 +2,24 @@
 
 > A lightweight, zero-dependency utility-first styling framework for HTML — powered by a single JavaScript file.
 
-[![jsdelivr](https://img.shields.io/badge/CDN-jsDelivr-f59e0b?style=flat-square)](https://cdn.jsdelivr.net/gh/rony-codes/chai-tailwind@main/index.js)
-[![license](https://img.shields.io/badge/license-MIT-f59e0b?style=flat-square)](./LICENSE)
-[![github](https://img.shields.io/badge/GitHub-rony--codes%2Fchai--tailwind-f59e0b?style=flat-square)](https://github.com/rony-codes/chai-tailwind)
+[![CDN](https://img.shields.io/badge/CDN-jsDelivr-f59e0b?style=flat-square)](https://cdn.jsdelivr.net/gh/rony-codes/chai-tailwind@main/index.js)
+[![License](https://img.shields.io/badge/license-MIT-f59e0b?style=flat-square)](./LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-rony--codes%2Fchai--tailwind-f59e0b?style=flat-square)](https://github.com/rony-codes/chai-tailwind)
+[![Website](https://img.shields.io/badge/website-live-f59e0b?style=flat-square)](https://strong-faun-8fb1c5.netlify.app/)
+
+---
+
+![chai-tailwind website preview](image.png)
 
 ---
 
 ## What is chai-tailwind?
 
-**chai-tailwind** reads your HTML class names and applies styles directly — no stylesheet, no build step, no configuration. Drop in one `<script>` tag and start using readable utility classes like `chai-p-4`, `chai-bg-blue`, or `chai-text-center` immediately.
+**chai-tailwind** reads your HTML class names and applies styles directly — no stylesheet, no build step, no configuration.
 
-It scans every element on page load, finds `chai-*` classes, and maps them to inline CSS — perfect for prototyping, learning, or any project where you want zero overhead.
+Drop in one `<script>` tag and start using readable utility classes like `chai-p-4`, `chai-bg-blue`, or `chai-text-center` immediately. It scans every element on page load, finds `chai-*` classes, and maps them to inline CSS.
+
+**Perfect for:** prototyping, learning HTML/CSS, or any project where you want zero overhead.
 
 ---
 
@@ -52,6 +59,26 @@ Place it before your closing `</body>` tag. That's the entire setup.
 
 ---
 
+## How It Works
+
+chai-tailwind runs one JavaScript pass when the script loads:
+
+1. Selects every element with a `class` attribute
+2. Filters for classes starting with `chai-`
+3. Parses each class into a **type** and **value**
+4. Sets the matching `element.style` property directly
+
+```
+chai-p-4
+ │   │ └── value  →  4  →  4 × 4px = 16px
+ │   └──── type   →  p  →  padding
+ └──────── prefix →  chai
+```
+
+Inline styles always win over stylesheets — no specificity battles, no conflicts.
+
+---
+
 ## Utility Reference
 
 All classes are prefixed with `chai-` to avoid conflicts with anything else on the page.
@@ -79,10 +106,6 @@ Values multiply by `4px` — so `chai-p-4` = `padding: 16px`.
 | `chai-ml-{n}` | `margin-left: n×4px` |
 | `chai-mr-{n}` | `margin-right: n×4px` |
 
-```html
-<div class="chai-p-6 chai-mx-4">Padded box with horizontal margin</div>
-```
-
 ---
 
 ### Colors
@@ -92,7 +115,7 @@ Values multiply by `4px` — so `chai-p-4` = `padding: 16px`.
 | `chai-bg-{color}` | `background-color: {color}` |
 | `chai-text-{color}` | `color: {color}` |
 
-**Available colors** — `red` `blue` `green` `yellow` `orange` `purple` `pink` `amber` `teal` `gray` `white` `black`
+**Available colors:** `red` `blue` `green` `yellow` `orange` `purple` `pink` `amber` `teal` `gray` `white` `black`
 
 ```html
 <div class="chai-bg-amber chai-text-white">Amber background, white text</div>
@@ -114,11 +137,6 @@ Values multiply by `4px` — so `chai-p-4` = `padding: 16px`.
 | `chai-text-right` | `text-align: right` |
 | `chai-font-bold` | `font-weight: bold` |
 
-```html
-<h1 class="chai-text-xl chai-font-bold chai-text-center">Page Title</h1>
-<p class="chai-text-sm chai-text-gray">Subtle helper text</p>
-```
-
 ---
 
 ### Borders
@@ -130,10 +148,6 @@ Values multiply by `4px` — so `chai-p-4` = `padding: 16px`.
 | `chai-border-{color}` | `border-color: {color}` |
 
 > Combine width and color: `chai-border chai-border-2 chai-border-amber`
-
-```html
-<div class="chai-border chai-border-blue chai-p-4">Blue bordered box</div>
-```
 
 ---
 
@@ -147,10 +161,6 @@ Values multiply by `4px` — so `chai-p-4` = `padding: 16px`.
 | `chai-rounded-lg` | `border-radius: 12px` |
 | `chai-rounded-xl` | `border-radius: 16px` |
 | `chai-rounded-full` | `border-radius: 9999px` |
-
-```html
-<button class="chai-bg-amber chai-px-4 chai-py-2 chai-rounded-full">Pill</button>
-```
 
 ---
 
@@ -177,13 +187,6 @@ Values multiply by `4px` — so `chai-p-4` = `padding: 16px`.
 | `chai-items-start` | `align-items: flex-start` |
 | `chai-items-end` | `align-items: flex-end` |
 
-```html
-<div class="chai-flex chai-justify-between chai-items-center">
-  <span>Left</span>
-  <span>Right</span>
-</div>
-```
-
 ---
 
 ### Sizing
@@ -196,10 +199,6 @@ Values multiply by `4px`. Use `full` for `100%`.
 | `chai-w-full` | `width: 100%` |
 | `chai-h-{n}` | `height: n×4px` |
 | `chai-h-full` | `height: 100%` |
-
-```html
-<div class="chai-w-full chai-h-10">Full-width, 40px tall</div>
-```
 
 ---
 
@@ -214,12 +213,6 @@ Values multiply by `4px`. Use `full` for `100%`.
 | `chai-bottom-{n}` | `bottom: n×4px` |
 | `chai-left-{n}` | `left: n×4px` |
 | `chai-right-{n}` | `right: n×4px` |
-
-```html
-<div class="chai-relative">
-  <span class="chai-absolute chai-top-0 chai-right-0">Badge</span>
-</div>
-```
 
 ---
 
@@ -239,6 +232,7 @@ Values multiply by `4px`. Use `full` for `100%`.
 ## Examples
 
 ### Card
+
 ```html
 <div class="chai-bg-white chai-p-6 chai-rounded-lg chai-border chai-border-gray">
   <h2 class="chai-text-lg chai-font-bold chai-text-black">Card Title</h2>
@@ -250,6 +244,7 @@ Values multiply by `4px`. Use `full` for `100%`.
 ```
 
 ### Navbar
+
 ```html
 <nav class="chai-flex chai-justify-between chai-items-center chai-bg-black chai-px-6 chai-py-4">
   <span class="chai-text-white chai-font-bold chai-text-lg">Brand</span>
@@ -261,6 +256,7 @@ Values multiply by `4px`. Use `full` for `100%`.
 ```
 
 ### Alerts
+
 ```html
 <div class="chai-bg-green  chai-text-white chai-p-4 chai-rounded-md">✓ Success</div>
 <div class="chai-bg-red    chai-text-white chai-p-4 chai-rounded-md">✗ Error</div>
@@ -268,6 +264,7 @@ Values multiply by `4px`. Use `full` for `100%`.
 ```
 
 ### Badge Overlay
+
 ```html
 <div class="chai-relative chai-w-10 chai-h-10 chai-bg-gray chai-rounded-lg">
   <span class="chai-absolute chai-top-0 chai-right-0 chai-bg-red chai-text-white chai-text-sm chai-rounded-full chai-p-1">
@@ -275,26 +272,6 @@ Values multiply by `4px`. Use `full` for `100%`.
   </span>
 </div>
 ```
-
----
-
-## How It Works
-
-chai-tailwind runs one JavaScript pass when the script loads:
-
-1. Selects every element with a `class` attribute
-2. Filters for classes starting with `chai-`
-3. Parses each class into a `type` and `value`
-4. Sets the matching `element.style` property directly
-
-```
-chai-p-4
- │   │ └── value  →  4  →  4×4px = 16px
- │   └──── type   →  p  →  padding
- └──────── prefix →  chai
-```
-
-Inline styles always win over stylesheets — no specificity battles, no conflicts.
 
 ---
 
