@@ -1,0 +1,31 @@
+{
+  "name": "chai-tailwind",
+  "version": "1.0.0",
+  "description": "A lightweight, zero-dependency utility-first CSS-in-JS framework. Style HTML elements with readable chai-* class names — no build step, no config, no stylesheet needed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "css",
+    "utility",
+    "utility-first",
+    "css-framework",
+    "styling",
+    "tailwind",
+    "inline-styles",
+    "zero-config",
+    "vanilla-js",
+    "lightweight"
+  ],
+  "author": "rony-codes",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rony-codes/chai-tailwind.git"
+  },
+  "homepage": "https://github.com/rony-codes/chai-tailwind#readme",
+  "bugs": {
+    "url": "https://github.com/rony-codes/chai-tailwind/issues"
+  }
+}
