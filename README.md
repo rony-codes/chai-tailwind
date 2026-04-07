@@ -1,6 +1,6 @@
 # ☕ chai-tailwind
 
-> A lightweight, zero-dependency utility-first styling framework for HTML — powered by a single JavaScript file.
+> A lightweight, zero-dependency utility-first styling framework for HTML powered by a single JavaScript file.
 
 [![CDN](https://img.shields.io/badge/CDN-jsDelivr-f59e0b?style=flat-square)](https://cdn.jsdelivr.net/gh/rony-codes/chai-tailwind@main/index.js)
 [![License](https://img.shields.io/badge/license-MIT-f59e0b?style=flat-square)](./LICENSE)
@@ -16,7 +16,7 @@
 
 ## What is chai-tailwind?
 
-**chai-tailwind** reads your HTML class names and applies styles directly — no stylesheet, no build step, no configuration.
+**chai-tailwind** reads your HTML class names and applies styles directly no stylesheet, no build step, no configuration.
 
 Drop in one `<script>` tag and start using readable utility classes like `chai-p-4`, `chai-bg-blue`, or `chai-text-center` immediately. It scans every element on page load, finds `chai-*` classes, and maps them to inline CSS.
 
@@ -76,7 +76,7 @@ chai-p-4
  └──────── prefix →  chai
 ```
 
-Inline styles always win over stylesheets — no specificity battles, no conflicts.
+Inline styles always win over stylesheets no specificity battles, no conflicts.
 
 ---
 
@@ -330,4 +330,4 @@ MIT © [rony-codes](https://github.com/rony-codes)
 
 ---
 
-<p align="center">Built with ☕ — simple, honest, utility-first styling.</p>
+<p align="center">Built with ☕ simple, honest, utility-first styling.</p>
