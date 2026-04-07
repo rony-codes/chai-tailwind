@@ -7,6 +7,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-rony--codes%2Fchai--tailwind-f59e0b?style=flat-square)](https://github.com/rony-codes/chai-tailwind)
 [![Website](https://img.shields.io/badge/website-live-f59e0b?style=flat-square)](https://strong-faun-8fb1c5.netlify.app/)
 
+[Live Link (Click me!)](https://strong-faun-8fb1c5.netlify.app/)
 ---
 
 ![chai-tailwind website preview](image.png)
